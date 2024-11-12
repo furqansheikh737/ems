@@ -1,37 +1,37 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Login({loginHandler}) {
-
+export default function Login({ loginHandler }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
-     e.preventDefault()
-     loginHandler(email, password)
+    e.preventDefault();
+    loginHandler(email, password);
 
-     setEmail("")
-     setPassword("")
-
-  }
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <>
-      <div className="flex min-h-screen flex-1 flex-col justify-center px-6 p-10 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Welcom Back
-          </h2>
-        </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form onSubmit={(e)=>{
-            submitHandler(e)
-          }} className="space-y-6">
+      <div className="flex min-h-screen flex-1 flex-col justify-center px-6 p-10 lg:px-8 bg-black text-white">
+        <div className="mt-10 sm:mx-auto sm:w-full border rounded p-8 border-yellow-600 sm:max-w-sm">
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+            <h2 className="mb-10  text-center text-2xl font-bold leading-9 tracking-tight text-white">
+              Welcom Back
+            </h2>
+          </div>
+          <form
+            onSubmit={(e) => {
+              submitHandler(e);
+            }}
+            className="space-y-6"
+          >
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-white"
               >
                 Email address
               </label>
@@ -41,8 +41,8 @@ export default function Login({loginHandler}) {
                   name="email"
                   type="email"
                   value={email}
-                  onChange={(e)=>{
-                    setEmail(e.target.value)
+                  onChange={(e) => {
+                    setEmail(e.target.value);
                   }}
                   required
                   autoComplete="email"
@@ -55,14 +55,14 @@ export default function Login({loginHandler}) {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-white"
                 >
                   Password
                 </label>
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-semibold text-yellow-600 hover:text-yellow-700"
+                    className="font-semibold text-yellow-500 hover:text-yellow-600"
                   >
                     Forgot password?
                   </a>
@@ -74,8 +74,8 @@ export default function Login({loginHandler}) {
                   name="password"
                   type="password"
                   value={password}
-                  onChange={(e)=>{
-                    setPassword(e.target.value)
+                  onChange={(e) => {
+                    setPassword(e.target.value);
                   }}
                   required
                   autoComplete="current-password"
